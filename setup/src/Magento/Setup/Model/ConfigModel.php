@@ -115,9 +115,10 @@ class ConfigModel
                 } else {
                     $fileConfigStorage[$config->getFileKey()] = $config->getData();
                 }
-                $this->writer->saveConfig($fileConfigStorage, $config->isOverrideWhenSave());
             }
         }
+        $this->writer->saveConfig($fileConfigStorage, true);
+
     }
 
     /**
